@@ -15,7 +15,8 @@ html {
  */
 
 body {
-  color: #545149;
+  color: #500303;
+  font-family: 'Bungee', cursive;
   background-color: #f4f1ec;
   font-size: 24px;
 }
