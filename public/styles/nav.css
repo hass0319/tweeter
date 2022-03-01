@@ -1,0 +1,28 @@
+/* nav specifications */
+nav{
+  display: flex;
+  position:static;
+  flex-flow: row;
+  align-items: center;
+  justify-content:space-between;
+  height:120px;
+  background-color: #4056a1;
+  font: #FFFFFF;
+}
+/* tweeter word specifications */
+.tweeter{
+  display:flex;
+  margin:1.5em;
+}
+/* Write new Tweet specifications */
+.write{
+  display:flex;
+  font-family: "Bungee Hairline" ,cursive;
+  margin:1.5em;
+}
+/* arrow emoji (font awesome) specifications */
+i {
+  display:flex;
+  align-self: center;
+  color: burlywood;
+}
