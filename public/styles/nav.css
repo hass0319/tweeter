@@ -1,7 +1,6 @@
 /* nav specifications */
 nav{
   display: flex;
-  /* position:static; */
   flex-flow: row;
   align-items: center;
   justify-content:space-between;
@@ -12,10 +11,6 @@ nav{
   height:120px;
   padding: 1.5em;
 }
-/* z-index: 0; */
-/* position: absolute; */
-/* background: lime; */
-/* tweeter word specifications */
 .tweeter{
   display:flex;
 }
