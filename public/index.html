@@ -59,12 +59,12 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <div class="tweeter">
+    <div id="tweeter">
       <span>tweeter</span>
     </div>
     <div class="write">
       <span><strong>Write</strong> a new tweet</span>
-      <i class="fas fa-angle-double-down"></i>
+      <i id="fas fa-angle-double-down"></i>
     </div>
   </nav>
 
@@ -83,8 +83,8 @@
       <form method="POST" action="/tweets">
         <label for="tweet-text"><h2>Compose Tweet</h2></label>
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div class="bttnCounter">
-          <button type="submit">Tweet</button>
+        <div class="button-Counter">
+          <button type="submit" class="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
