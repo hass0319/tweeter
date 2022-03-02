@@ -16,12 +16,24 @@ html {
  */
 
 body {
+  width:100vw;
+  height:100vh;
   color: #2c0202;
   font-family: 'Bungee', cursive;
-  background-color: rgb(64, 217, 223);
+  background-color:white;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background-color: #1d3149;
+  /* background-image: url("https://www.transparenttextures.com/patterns/psychedelic.png"); */
 }
-
+main{
+  display:flex;
+  padding-left:5%;
+  padding-right:5%; 
+}
+  
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
