@@ -1,0 +1,42 @@
+
+.container{
+  display: flex;
+  width:100vw;
+  justify-content: center;
+  flex-direction: column;
+}
+.new-tweet{
+  font-family: 'Indie Flower', cursive;
+  align-items: center;
+}
+#tweet-text{
+  width: 90vw;
+  color: rgb(231, 209, 209);
+  border: none;   
+  border-bottom: 4px solid rgb(231, 209, 209);   
+  background-color: inherit;   
+  /* outline: none; */
+}
+
+.button{
+  display: flex;
+  text-align: center;
+  font-family:"Abel", sans-serif; 
+  border-radius: 12px;
+  padding: 8px 24px;
+  background-color: cornflowerblue;
+  border: 2px solid #587bee;
+  transition-duration: 0.6s;
+} 
+  
+.button:hover { 
+  background-color: rgb(9, 57, 139);
+  color: rgb(86, 129, 209);
+}
+
+.button-Counter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
