@@ -1,15 +1,15 @@
 /* nav specifications */
 nav{
   display: flex;
-  position:static;
+  /* position:static; */
   flex-flow: row;
   align-items: center;
   justify-content:space-between;
   background-color: #4056a1;
   font: #FFFFFF;
+  position: fixed;
+  top: 0; left: 0; right: 0; margin: 0; z-index: 1;
   height:120px;
-  position: absolute;
-  top: 0; left: 0; right: 0; margin: 0;
   padding: 1.5em;
 }
 /* z-index: 0; */
@@ -30,11 +30,3 @@ i {
   align-self: center;
   color: burlywood;
 }
-
-/* .positioned {
-  position: absolute;
-  top: 0; bottom: 0; left: 0; right: 0; margin: 0;
-  top: 30px;
-  left: 30px;
-  background: yellow;
-} */
