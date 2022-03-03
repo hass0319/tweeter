@@ -53,39 +53,60 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" 
+          src="/scripts/client.js"></script>
+
+  <script type="text/javascript" 
+          src="/scripts/textareaExample.js"></script> <!--  example -->
+
+  <script type="text/javascript" 
+          src="/scripts/composer-char-counter.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
     <div id="tweeter">
+
       <span>tweeter</span>
     </div>
     <div class="write">
       <span><strong>Write</strong> a new tweet</span>
       <i id="fas fa-angle-double-down"></i>
+
     </div>
   </nav>
 
   <header>
     <div class="img">
+
       <img src="/images/profile-hex.png">
+
     </div>
     <br>
     <div class="name">
+
       <h2>BEEBO</h2>
+
     </div>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
       <form method="POST" action="/tweets">
-        <label for="tweet-text"><h2>Compose Tweet</h2></label>
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+
+        <div class="input">
+
+          <label for="tweet-text">Compose Tweet</label>
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        
+        </div>
+          
         <div class="button-Counter">
+
           <button type="submit" class="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
+          
         </div>
       </form>
     </section>
