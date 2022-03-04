@@ -1,4 +1,4 @@
-header{
+.profile-header{
   display: flex;
   position: relative;
   /* position: fixed; */
@@ -10,6 +10,6 @@ header{
   background-color: #1d3149;
   background-image: url("https://www.transparenttextures.com/patterns/psychedelic.png");
 }
-img{
+.img {
   margin-top: 120px;/*nav height*/
 }
