@@ -17,6 +17,10 @@
   background-color: inherit;   
   /* outline: none; */
 }
+#tweet-text:hover{
+  transition-duration: 0.6s;
+  box-shadow: .25em .25em .25em rgba(90, 194, 107, 0.445);
+}
 
 .button{
   display: flex;
@@ -26,10 +30,10 @@
   padding: 8px 24px;
   background-color: cornflowerblue;
   border: 2px solid #587bee;
-  transition-duration: 0.6s;
 } 
   
 .button:hover { 
+  transition-duration: 0.6s;
   background-color: rgb(9, 57, 139);
   color: rgb(86, 129, 209);
 }
@@ -43,4 +47,26 @@
 
 .charLimit{
   color: red;
+}
+
+.tweets-container {
+  margin-top: 2em;
+}
+
+.tweets-container:hover{
+  transition-duration: 0.6s;
+  box-shadow: .5em .5em .5em rgba(90, 194, 107, 0.445);
+  color: rgb(86, 129, 209);
+}
+
+.tweet-header{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#profile-info{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
 }
