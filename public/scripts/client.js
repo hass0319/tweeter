@@ -5,32 +5,7 @@
  */
 $(document).ready(function() {
 
-  const createTweetElement = (data) => {
-  
-    const $tweet = $(`
-    <article>
-    <header class="tweet-header" >
-      <div id="profile-info">
-        <img id="pp" src="https://i.imgur.com/73hZDYK.png" alt="Profile Picture">
-          <label for="img">${data.user.name}</label>
-      </div>
-      <span>${data.user.handle}</span>
-    </header>
-    <p class="tweet-card" type="text" placeholder="Tweet">${data.content.text}</p>
-    <footer>
-      <output for="input">${data.created_at}</output>
-      <div class="icons">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
-      </div>
-    </footer>
-  </article>`);
-
-    return $tweet;
-  };
-
-  const data = [
+  const tweetData = [
     {
       "user": {
         "name": "Newton",
@@ -54,25 +29,57 @@ $(document).ready(function() {
       "created_at": 1461113959088
     }
   ];
-  
-  
-  
-  const renderTweets = function(tweets) {
-    let x = [];
-    for (let tweet of tweets) {
-      x.push(createTweetElement(tweet));
-    }
-    return x;
-    
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-  };
-  const $tweet = renderTweets(data);
-  console.log($tweet); // to see what it looks like
-  
-  console.log(renderTweets(data));
-  
-  $('.tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-});
 
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  const renderTweets = function(tweets) {
+    const $tweetContainer = $('.tweets-container');
+    for (let tweet of tweets) {
+      // console.log('tweet => ',tweet);
+      const $tweetEl = createTweetElement(tweet);
+      // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+      $tweetContainer.prepend($tweetEl);
+    }
+  };
+
+  const createTweetElement = (tweetPar) => {
+    const $tweet = $(` <article>
+    <header class="tweet-header">
+      <div id="profile-info">
+        <img id="pp" src="https://i.imgur.com/73hZDYK.png" alt="Profile Picture">
+        <label for="img">${tweetPar.user.name}</label>
+      </div>
+      <span>${tweetPar.user.handle}</span>
+    </header>
+    <p class="tweet-card" type="text" placeholder="Tweet">${tweetPar.content.text}</p>
+    <footer>
+      <output for="input">${tweetPar.created_at}</output>
+      <div class="icons">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+    </footer>
+  </article>`);
+
+    return $tweet;
+  };
+
+  renderTweets(tweetData);
+  // console.log($tweet); // to see what it looks like
+  
+  // console.log(renderTweets(tweetData));
+  // console.log($('form'));
+  $('form').submit(function(event) {
+    event.preventDefault();
+    // console.log($(this).serialize());
+
+    const serial = $(this).serialize();
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: serial
+    });
+  });
+});
