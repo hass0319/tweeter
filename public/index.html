@@ -54,41 +54,40 @@
 
   <!-- App JS -->
   <script type="text/javascript" 
-          src="/scripts/client.js"></script>
-
-          <!--  example -->
-  <script type="text/javascript" 
-          src="/scripts/textareaExample.js"></script> 
+          src="/scripts/client.js">
+  </script>
 
   <script type="text/javascript" 
-          src="/scripts/composer-char-counter.js"></script>
+          src="/scripts/composer-char-counter.js">
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" 
+          integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+  </script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
     <div id="tweeter">
-
       <span>tweeter</span>
     </div>
+
     <div class="write">
       <span><strong>Write</strong> a new tweet</span>
       <i id="fas fa-angle-double-down"></i>
-
     </div>
   </nav>
 
   <header class="profile-header">
     <div class="img">
-
       <img src="/images/profile-hex.png">
-
     </div>
     <br>
     <div class="name">
-
       <h2>BEEBO</h2>
-
     </div>
   </header>
   <!-- Page-specific (main) content here -->
@@ -97,22 +96,18 @@
       <form method="POST" action="/tweets">
 
         <div class="input">
-
           <label for="tweet-text">Compose Tweet</label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        
         </div>
           
         <div class="button-Counter">
-
           <button type="submit" class="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
-          
         </div>
+        <p class="errMsg" ></p>
       </form>
     </section>
     <div class="tweets-container"></div>
-    
   </main>
 </body>
 
