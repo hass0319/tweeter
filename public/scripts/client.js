@@ -3,33 +3,10 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(function() {
 
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ];
-
+  
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -42,19 +19,46 @@ $(document).ready(function() {
       $tweetContainer.prepend($tweetEl);
     }
   };
+  
+  function loadTweets() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      dataType: 'JSON'
+    })
+      .then((data) => {
+        renderTweets(data);
+      });
+  }
+    
+  function loadNewTweet() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+      dataType: 'JSON'
+    })
+      .then((data) => {
+        renderTweets([data[data.length - 1]]);
+      });
+  }
 
-  const createTweetElement = (tweetPar) => {
+  const createTweetElement = (tweetPar)=> {
+    let dateAdded = timeago.format(new Date());
+    if (tweetPar.created_at) {
+      dateAdded = timeago.format(tweetPar.created_at);
+    }
+
     const $tweet = $(` <article>
     <header class="tweet-header">
       <div id="profile-info">
-        <img id="pp" src="https://i.imgur.com/73hZDYK.png" alt="Profile Picture">
+        <img id="pp" src=${tweetPar.user.avatars}>
         <label for="img">${tweetPar.user.name}</label>
       </div>
       <span>${tweetPar.user.handle}</span>
     </header>
     <p class="tweet-card" type="text" placeholder="Tweet">${tweetPar.content.text}</p>
     <footer>
-      <output for="input">${tweetPar.created_at}</output>
+      <output for="input">${ dateAdded }</output>
       <div class="icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -62,24 +66,24 @@ $(document).ready(function() {
       </div>
     </footer>
   </article>`);
-
     return $tweet;
   };
-
-  renderTweets(tweetData);
-  // console.log($tweet); // to see what it looks like
   
-  // console.log(renderTweets(tweetData));
-  // console.log($('form'));
+
   $('form').submit(function(event) {
     event.preventDefault();
-    // console.log($(this).serialize());
+    let serial = $(this).serialize();
 
-    const serial = $(this).serialize();
+    
     $.ajax({
       method: 'POST',
       url: '/tweets',
       data: serial
-    });
+    })
+      .then(() => {
+        loadNewTweet();
+      });
   });
+  
+
 });
