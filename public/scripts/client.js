@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+  loadTweets();
   
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -68,21 +69,36 @@ $(document).ready(function() {
   </article>`);
     return $tweet;
   };
-  
+  //  let errMssg = 'Exeeded the tweet  character limit'
+  $(".errMsg").hide();
 
   $('form').submit(function(event) {
     event.preventDefault();
     let serial = $(this).serialize();
 
-    
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: serial
-    })
-      .then(() => {
-        loadNewTweet();
-      });
+    console.log(($(".counter").val()));
+
+    if (($(".counter").first().val() < 0)) {
+      $(".counter").hide().fadeIn(5000);
+
+      $(".errMsg").text(`Exeeded the tweet  character limit`).show().fadeOut(3000);
+     
+
+    } else if ($("textarea").first().val() === '') {
+      $(".counter").hide().fadeIn(5000);
+
+      $(".errMsg").text(`Tweet Area EMPTY`).show().fadeOut(3000);
+      
+    } else {
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: serial
+      })
+        .then(() => {
+          loadNewTweet();
+        });
+    }
   });
   
 
