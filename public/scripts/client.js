@@ -42,8 +42,16 @@ $(document).ready(function() {
         renderTweets([data[data.length - 1]]);
       });
   }
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = (tweetPar)=> {
+
+    const safeHTML = `<p>${escape(tweetPar.content.text)}</p>`;
+
     let dateAdded = timeago.format(new Date());
     if (tweetPar.created_at) {
       dateAdded = timeago.format(tweetPar.created_at);
@@ -57,7 +65,7 @@ $(document).ready(function() {
       </div>
       <span>${tweetPar.user.handle}</span>
     </header>
-    <p class="tweet-card" type="text" placeholder="Tweet">${tweetPar.content.text}</p>
+    <p class="tweet-card" type="text" placeholder="Tweet">${ safeHTML }</p>
     <footer>
       <output for="input">${ dateAdded }</output>
       <div class="icons">
