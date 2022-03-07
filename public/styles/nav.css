@@ -1,11 +1,10 @@
 /* nav specifications */
 nav{
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content:space-between;
   background-color: #4056a1;
-  font: #FFFFFF;
   position: fixed;
   top: 0; left: 0; right: 0; margin: 0; z-index: 1;
   height:120px;
@@ -18,6 +17,11 @@ nav{
     flex-flow: column nowrap;
     align-items: center;
 }
+span{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 /* arrow emoji (font awesome) specifications */
 .fas {
   color: rgb(144, 120, 88);
@@ -25,4 +29,7 @@ nav{
 .fas:hover {
   color: rgb(241, 176, 10);
   cursor: pointer;
+}
+.fas:active{
+  animation: forwards;
 }

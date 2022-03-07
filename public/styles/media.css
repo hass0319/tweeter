@@ -13,11 +13,17 @@
     color: rgb(10, 5, 77);
     font-size: 20px;
 }
+  #top-page {
+    position: fixed;
+    right: 0.25em;
+    bottom: 0.25em;
+  }
+}
 
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
   body{
-    margin-top: 10em;
+    margin-top: 7em;
     display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -31,9 +37,10 @@
     background-image: url("https://www.transparenttextures.com/patterns/psychedelic.png");
   }
   .container {
-    padding: 2.5em;
-    margin: 0 auto;
-    margin-left: 50%;
+    padding-bottom: 2.5em;
+    padding-right: 5.5em;
+    margin: initial;
+    margin-left: 40%;
     max-width: 2000px;
     font-size: 16px;
     font-style: italic;
@@ -51,4 +58,7 @@
     color: #530606;
     text-align: left;
   } 
+  footer{
+    margin-top: -1.5em;
+  }
 }
