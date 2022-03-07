@@ -14,11 +14,15 @@ nav{
 /* Write new Tweet specifications */
 .write{
   font-family: "Bungee Hairline" ,cursive;
+  display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 /* arrow emoji (font awesome) specifications */
-.nav-arrow {
-  display:flex;
-  align-self: center;
-  color: burlywood;
-  /* z-index: 2; */
+.fas {
+  color: rgb(144, 120, 88);
+}
+.fas:hover {
+  color: rgb(241, 176, 10);
+  cursor: pointer;
 }
