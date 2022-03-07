@@ -4,6 +4,8 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name='viewport' 
+        content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" 
@@ -48,6 +50,10 @@
   <link rel="stylesheet" 
         href="/styles/new-tweet.css" 
         type="text/css" />
+  
+        <link rel="stylesheet" 
+        href="/styles/media.css" 
+        type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -77,10 +83,9 @@
 
     <div class="write">
       <span><strong>Write</strong> a new tweet</span>
-      <i id="fas fa-angle-double-down"></i>
+      <i class="nav-arrow" id="fas fa-angle-double-down"></i>
     </div>
   </nav>
-
   <header class="profile-header">
     <div class="img">
       <img src="/images/profile-hex.png">
@@ -96,15 +101,14 @@
       <form method="POST" action="/tweets">
 
         <div class="input">
-          <label for="tweet-text">Compose Tweet</label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         </div>
           
         <div class="button-Counter">
           <button type="submit" class="button">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
+          <p class="errMsg" ></p>
         </div>
-        <p class="errMsg" ></p>
       </form>
     </section>
     <div class="tweets-container"></div>
