@@ -15,19 +15,14 @@ html {
  * Global layout stuff
  */
 
-body {
-  width:100vw;
-  height:100vh;
+ body {
   color: #2c0202;
   font-family: 'Bungee', cursive;
   font-size: 24px;
-  flex-direction: column;
-  align-content: space-between;
-  background-color: #1d3149;
+  background-color: rgb(111 90 194 / 22%);
 }
 
 main{
-  display:flex;
   padding-left:5%;
   padding-right:5%; 
 }
