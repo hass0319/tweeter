@@ -13,16 +13,20 @@ This repository is the starter code for the project: Students will fork and clon
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Final Product
-
+**A demo  of the Desktop version!**
 !["A demo  of the Desktop version!"](https://github.com/hass0319/tweeter/blob/master/docs/desktopScreen-1024px.png)
 
+**Showcasing the character limit counter Error**
 !["Showcasing the character limit counter"](https://github.com/hass0319/tweeter/blob/master/docs/charLmit-error.png)
 
+**Showcasing Emtpy text Area Error**
 !["Showcasing Emtpy text Area"](https://github.com/hass0319/tweeter/blob/master/docs/EmptyTextArea.png)
 
-!["Showcasing responsive screen (min-width: 768px)"](https://github.com/hass0319/tweeter/blob/master/docs/hover-&-topPage.png)
+**Showcasing responsive screen (min-width: 768px)**
+!["Showcasing responsive screen (min-width: 768px)"](https://github.com/hass0319/tweeter/blob/master/docs/responsive-768px.png)
 
-!["Showcasing hover and topPage button"](https://github.com/hass0319/tweeter/blob/master/docs/responsive-768px.png)
+**Showcasing hover and topPage button**
+!["Showcasing hover and topPage button"](https://github.com/hass0319/tweeter/blob/master/docs/hover-&-topPage.png)
 
 ## Dependencies
 
