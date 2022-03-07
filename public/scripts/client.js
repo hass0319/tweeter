@@ -5,9 +5,30 @@
  */
 
 // $(document).ready(function() {
+
+const toTopOfPage = function() {
+  $(window).on("scroll", function() {
+  
+    // If window falls below 400 (the height of the header)
+    // the toTopOfPage button will appear
+    if ($(window).scrollTop() >= 400) {
+      $("#top-page").show();
+    
+      $("#top-page").on("click", function() {
+        $(window).scrollTop(0);
+      });
+    } else {
+      $("#top-page").hide();
+    }
+  });
+};
+
+
+
 $(() => {
 
   loadTweets();
+  toTopOfPage();
   
   // loops through tweets
   // calls createTweetElement for each tweet
