@@ -1,7 +1,7 @@
 /* nav specifications */
 nav{
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   align-items: center;
   justify-content:space-between;
   background-color: #4056a1;
@@ -11,17 +11,14 @@ nav{
   height:120px;
   padding: 1.5em;
 }
-.tweeter{
-  display:flex;
-}
 /* Write new Tweet specifications */
 .write{
-  display:flex;
   font-family: "Bungee Hairline" ,cursive;
 }
 /* arrow emoji (font awesome) specifications */
-i {
+.nav-arrow {
   display:flex;
   align-self: center;
   color: burlywood;
+  /* z-index: 2; */
 }
