@@ -40,6 +40,10 @@
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
   }
+  #top-page {
+    right: 0rem;
+    bottom: 0rem;
+  }
   #tweet-text {
     width: -webkit-fill-available;
 }
