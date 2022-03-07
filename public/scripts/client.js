@@ -4,7 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+// $(document).ready(function() {
+$(() => {
 
   loadTweets();
   
@@ -42,6 +43,7 @@ $(document).ready(function() {
         renderTweets([data[data.length - 1]]);
       });
   }
+
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -50,14 +52,14 @@ $(document).ready(function() {
 
   const createTweetElement = (tweetPar)=> {
 
-    const safeHTML = `<p>${escape(tweetPar.content.text)}</p>`;
+    const safeHTML = `<p class="text">${escape(tweetPar.content.text)}</p>`;
 
     let dateAdded = timeago.format(new Date());
     if (tweetPar.created_at) {
       dateAdded = timeago.format(tweetPar.created_at);
     }
 
-    const $tweet = $(` <article>
+    const $tweet = $(` <article class="article">
     <header class="tweet-header">
       <div id="profile-info">
         <img id="pp" src=${tweetPar.user.avatars}>
@@ -77,25 +79,19 @@ $(document).ready(function() {
   </article>`);
     return $tweet;
   };
-  //  let errMssg = 'Exeeded the tweet  character limit'
   $(".errMsg").hide();
 
   $('form').submit(function(event) {
     event.preventDefault();
     let serial = $(this).serialize();
 
-    console.log(($(".counter").val()));
-
     if (($(".counter").first().val() < 0)) {
-      $(".counter").hide().fadeIn(5000);
-
-      $(".errMsg").text(`Exeeded the tweet  character limit`).show().fadeOut(3000);
-     
+      $(".counter").hide().fadeIn(6000);
+      $(".errMsg").text(`Exeeded tweet character limit`).show('fast').fadeOut(1000);
 
     } else if ($("textarea").first().val() === '') {
-      $(".counter").hide().fadeIn(5000);
-
-      $(".errMsg").text(`Tweet Area EMPTY`).show().fadeOut(3000);
+      $(".counter").hide().fadeIn(6000);
+      $(".errMsg").text(`Tweet Area EMPTY`).show().fadeOut(1000);
       
     } else {
       $.ajax({
@@ -108,6 +104,4 @@ $(document).ready(function() {
         });
     }
   });
-  
-
 });
