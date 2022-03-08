@@ -24,8 +24,8 @@
         href="https://fonts.gstatic.com" 
         crossorigin/>
 
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Abel&family=Almarai:wght@300&family=BhuTuka+Expanded+One&family=Bungee&family=Bungee+Hairline&family=Gloria+Hallelujah&family=Indie+Flower&family=Shizuru&display=swap"/>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Bungee&family=Open+Sans:wght@300;600&display=swap"
+       rel="stylesheet">
 
   <!-- fontAwesome -->
   <link rel="stylesheet" 
@@ -82,19 +82,22 @@
     </div>
 
     <div class="write">
-      <span><strong>Write</strong> a new tweet</span>
+      <p><strong>Write</strong> a new tweet</p>
       <i class="fas fa-angle-double-down"></i>
     </div>
   </nav>
+
+  <!-- Header -->
   <header class="profile-header">
     <div class="img">
       <img src="/images/profile-hex.png">
     </div>
-    <br>
+    
     <div class="name">
-      <h2>KING <small>BEEBO</small></h2>
+      <p><strong>KING</strong> BEEBO</p>
     </div>
   </header>
+
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
@@ -111,11 +114,12 @@
         </div>
       </form>
     </section>
-    <div class="tweets-container">
-      <button id="top-page" style="display: none">
-        <i class="far fa-caret-square-up"></i>
-      </button>
-    </div>
+    <div class="tweets-container"></div>
   </main>
+
+  <!--back to top (stretch)  -->
+  <button id="top-page" style="display: none">
+    <i class="far fa-caret-square-up"></i>
+  </button>
 </body>
 </html>

@@ -5,31 +5,36 @@ nav{
   align-items: center;
   justify-content:space-between;
   background-color: #4056a1;
+  color: white;
   position: fixed;
   top: 0; left: 0; right: 0; margin: 0; z-index: 1;
   height:120px;
   padding: 1.5em;
 }
+
+#tweeter {
+  font-family: 'Bungee', cursive;
+}
+
 /* Write new Tweet specifications */
 .write{
-  font-family: "Bungee Hairline" ,cursive;
   display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
-span{
-  display: flex;
-    flex-direction: row;
-    align-items: center;
+.name {
+  font-size: 1.5em;
 }
+
 /* arrow emoji (font awesome) specifications */
-.fas {
-  color: rgb(144, 120, 88);
+.write i{
+  color: rgb(241, 18, 18);
+  margin-top: -.8em;
 }
-.fas:hover {
+.write i:hover {
   color: rgb(241, 176, 10);
   cursor: pointer;
 }
-.fas:active{
+.write i:active{
   animation: forwards;
 }

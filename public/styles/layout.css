@@ -17,15 +17,21 @@ html {
 
  body {
   color: #2c0202;
-  font-family: 'Bungee', cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   background-color: rgb(111 90 194 / 22%);
 }
 
-main{
+main.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  width: 90vw;
+  margin: 1em auto;
   padding-left:5%;
   padding-right:5%; 
 }
+
 #top-page {
   position: fixed;
   right: 0.75em;

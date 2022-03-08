@@ -6,13 +6,16 @@
   width: auto;
   background-color: #4056a1;
   }
-  .container {
+
+  main.container {
     width: auto;
   }
+
   #tweet-text {
     color: rgb(10, 5, 77);
     font-size: 20px;
-}
+  }
+
   #top-page {
     position: fixed;
     right: 0.25em;
@@ -28,6 +31,7 @@
       flex-direction: row;
       align-items: flex-start;
   }
+
   .profile-header {
     position:fixed;
     width: 33.3vw;
@@ -36,7 +40,8 @@
     flex-direction: column;
     background-image: url("https://www.transparenttextures.com/patterns/psychedelic.png");
   }
-  .container {
+
+  main.container {
     padding-bottom: 2.5em;
     padding-right: 5.5em;
     margin: initial;
@@ -47,18 +52,22 @@
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
   }
+
   #top-page {
     right: 0rem;
     bottom: 0rem;
   }
+
   #tweet-text {
     width: -webkit-fill-available;
-}
+  }
+
   .new-tweet {
     color: #530606;
     text-align: left;
   } 
-  footer{
+  
+  .article footer{
     margin-top: -1.5em;
   }
 }

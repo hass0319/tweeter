@@ -19,9 +19,9 @@ $(() => {
 
     const tweet = `
     <article class="article">
-        <header class="tweet-header">
-          <div id="profile-info">
-            <img id="pp" src=${tweetData.user.avatars}>
+        <header>
+          <div class="profile-info">
+            <img src=${tweetData.user.avatars} alt="User-avatar">
             <p>${tweetData.user.name}</p>
           </div>
           <p>${tweetData.user.handle}</p>
